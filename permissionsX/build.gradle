@@ -1,8 +1,7 @@
 apply plugin: 'com.android.library'
+//应用发布使用的插件
+apply plugin: 'com.novoda.bintray-release'
 
-// 在需要开放的library中添加这两行
-apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 29
@@ -34,4 +33,14 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+//添加发布相关的配置
+publish {
+    userOrg = 'yk14123' //用户名
+    groupId = 'com.chinafocus.androidx'//代码库路径
+    artifactId = 'permissionx'//项目名称
+    publishVersion = '1.0.0'//版本号
+    desc = 'the base utils for permissions'//项目描述
+    website = 'https://github.com/yk14123/PermissionsX'//项目对应网站
 }
